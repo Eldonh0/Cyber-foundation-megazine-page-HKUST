@@ -1,0 +1,70 @@
+---
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, 'Songti SC', serif;
+      background: #f7f6f2;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+    a { color: #1a5dab; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header.site-header {
+      background: #111;
+      color: #fff;
+      padding: 32px 20px;
+      text-align: center;
+    }
+    header.site-header h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      letter-spacing: 2px;
+    }
+    header.site-header p {
+      margin: 6px 0 0;
+      color: #aaa;
+      letter-spacing: 3px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+    }
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #888;
+      font-size: 0.85rem;
+      border-top: 1px solid #ddd;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1><a href="/" style="color:#fff; text-decoration:none;">我的杂志</a></h1>
+    <p>Science Fiction &amp; Fantasy</p>
+  </header>
+  <main>
+    <slot />
+  </main>
+  <footer>
+    © 2026 我的杂志 · Powered by Astro &amp; GitHub Pages
+  </footer>
+</body>
+</html>
